@@ -1,0 +1,56 @@
+digraph { 
+	rankdir = LR;
+	fixedwidth = true;
+	graph [ nodesep = 0 ];
+	
+	node [
+		shape = box,
+		margin=0,
+		width = 3
+		#style="rounded",
+		#penwidth = 1,
+		#fontname = "Arial",
+		#fontsize = 12
+	];
+	
+	node3 [label="Modelling", style=filled, fillcolor=grey]; 
+	node4 [label="Output Persistence"]; 
+	
+	subgraph cluster_1 {
+		
+		node1 	[label="Data Loading"]; 
+		node11 	[
+					label = <<table border="0" cellspacing="0" cellpadding="0" cellborder="1">
+							<tr><td width="216">Data Loading</td></tr>
+							<tr><td port="a">- abc</td></tr>
+							<tr><td>- xyz</td></tr>
+							<tr><td>- aaa</td></tr>
+							</table>>,
+					shape = none
+		];
+	}
+	
+	subgraph cluster_2 {
+		node2 	[label="Data Manipulation"]; 
+		node22 	[label = <<table border="0" cellspacing="0">
+							<tr><td border="0" bgcolor="red">corpus_language</td></tr>
+							<tr><td border="1" port="b">id: en</td></tr>
+							<tr><td border="1">name: Englist</td></tr>
+							<tr><td border="1">sentence_count: 1027686</td></tr>
+							</table>>,
+					shape = none
+		];
+	}
+	
+	node1 -> node2 -> node3 -> node4;
+	
+	node1 -> node11 [style=invis];
+	node2 -> node22 [style=invis];
+	
+	node11:a -> node22:b;
+	
+	{ rank=same; node1; node11; }
+
+	{ rank=same; node2; node22; }
+	
+}

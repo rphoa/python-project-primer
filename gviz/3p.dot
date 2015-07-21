@@ -1,0 +1,73 @@
+digraph { 
+	rankdir = LR;
+	node [
+		shape=box,
+		margin=0
+		#style="rounded",
+		#penwidth = 1,
+		fontname = "Century Gothic",
+		fontsize = 10
+	];
+	
+	node1 	[
+				label = <<table border="0" cellspacing="0" cellpadding="5">
+						<tr><td border="1" port="a" cellpadding="5" sides="b">
+							<font point-size="16">Data Loading</font>
+						</td></tr>
+						<tr><td align="left">
+							- Load data from CSV
+						</td></tr>
+						<tr><td align="left">
+							- Load data from database
+						</td></tr>
+						</table>>
+	];
+
+	node2 	[
+				label = <<table border="0" cellspacing="0" cellpadding="5">
+						<tr><td border="1" port="b" cellpadding="5" sides="b">
+							<font point-size="16">Data Manipulation</font>
+						</td></tr>
+						<tr><td align="left">
+							- Load data from CSV
+						</td></tr>
+						<tr><td align="left">
+							- Load data from database
+						</td></tr>
+						<tr><td align="left">
+							- Load data from CSV
+						</td></tr>
+						<tr><td align="left">
+							- Load data from database
+						</td></tr>
+						</table>>
+	];
+	
+	node3 	[
+				label = <<table border="0" cellspacing="0" cellpadding="5">
+						<tr><td border="0" port="c" cellpadding="5" sides="b">
+							<font point-size="16">Modelling</font>
+						</td></tr>
+						<tr><td align="left">
+							
+						</td></tr>
+						</table>>
+	];
+
+	node4 	[
+				label = <<table border="0" cellspacing="0" cellpadding="5">
+						<tr><td border="1" port="d" cellpadding="5" sides="b">
+							<font point-size="16">Saving Output</font>
+						</td></tr>
+						<tr><td align="left">
+							- Load data from CSV
+						</td></tr>
+						<tr><td align="left">
+							- Load data from database
+						</td></tr>
+						</table>>
+	]
+	
+	node1:a -> node2:b -> node3:c -> node4:d;
+	
+}

@@ -1,0 +1,1 @@
+dot -T png 3p.dot -o a.png
